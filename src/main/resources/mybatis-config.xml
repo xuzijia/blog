@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!--myBatis配置实现数据库字段下划线映射到java对象的驼峰式命名属性。-->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+    
+</configuration>

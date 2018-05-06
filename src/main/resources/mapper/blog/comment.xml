@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--评论 sql-->
+<mapper namespace="com.xuzijia.blog.mapper.CommentMapper">
+    <insert id="addComment" parameterType="commentVo">
+        insert into tb_blog_comment(id,type,target_key,parent_id,root_id,content,status,visitor_name,visitor_email,visitor_website,ip,comment_time,user_id)
+        values(#{id},#{type},#{targetKey},#{parentId},#{rootId},#{content},#{status},#{visitorName},#{visitorEmail},#{visitorWebsite},#{ip},#{commentTime},#{userId})
+    </insert>
+
+    <select id="findCommentById" parameterType="string" resultType="commentQueryVo">
+        select * from tb_blog_comment where id=#{id}
+    </select>
+
+    <select id="findCommentListByFirst" resultType="CommentListVo" parameterType="commentPageQueryVo">
+        SELECT
+        c.*, if(ISNULL(a.zan),0,a.zan) zan
+        FROM
+        tb_blog_comment c LEFT JOIN
+        (
+        SELECT
+        COUNT(*) zan ,
+        c.id cid
+        FROM
+        tb_blog_comment_zan z left join tb_blog_comment c on c.id= z.comment_id
+        WHERE
+        z.type = 0
+        GROUP BY c.id
+        ) a on a.cid = c.id HAVING c.root_id='' and c.parent_id='' and c.target_key=#{commentVo.targetKey} and
+        c.type=#{commentVo.type}
+
+        <if test="commentVo.sortType=='early'">
+            order by comment_time
+        </if>
+        <if test="commentVo.sortType=='newly'">
+            order by comment_time desc
+        </if>
+        <if test="commentVo.sortType=='hot'">
+            order by zan desc
+        </if>
+
+        limit ${pageQuery.limitFirst},${pageQuery.showCount}
+    </select>
+    <select id="findCommentListByFirstCount" resultType="int" parameterType="commentPageQueryVo">
+        select count(*) from tb_blog_comment where  parent_id='' and root_id='' and type=#{commentVo.type} and target_key=#{commentVo.targetKey}
+    </select>
+    <select id="findCommentListByMany" resultType="CommentListVo" parameterType="map">
+        SELECT
+        c.*, if(ISNULL(a.zan),0,a.zan) zan
+        FROM
+        tb_blog_comment c LEFT JOIN
+        (
+        SELECT
+        COUNT(*) zan ,
+        c.id cid
+        FROM
+        tb_blog_comment_zan z left join tb_blog_comment c on c.id= z.comment_id
+        WHERE
+        z.type = 0
+        GROUP BY c.id
+        ) a on a.cid = c.id HAVING c.type=#{type} and root_id in
+
+        <foreach collection="ids" index="index" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+
+        <if test="sortType=='early'">
+            order by comment_time
+        </if>
+        <if test="sortType=='newly'">
+            order by comment_time desc
+        </if>
+        <if test="sortType=='hot'">
+            order by zan desc
+        </if>
+    </select>
+
+    <insert id="addCommentZan" parameterType="commentZan">
+        insert into tb_blog_comment_zan(user_id,comment_id,ip,type)
+        values(#{userId},#{commentId},#{ip},#{type})
+    </insert>
+
+
+    <select id="findCommentZanCount" parameterType="string" resultType="int">
+        select count(*) from tb_blog_comment_zan where comment_id=#{commentId} and type=0
+    </select>
+
+    <select id="findCommentZan" parameterType="commentZan" resultType="commentZan">
+        select * from tb_blog_comment_zan
+        where comment_id=#{commentId} and type=0 and ip=#{ip} and  HOUR(timediff( now(),create_time))<![CDATA[ < ]]> 24
+    </select>
+    <select id="findACommentListByRoot" resultType="aCommentQueryVo" parameterType="aCommentPageQueryVo">
+        SELECT
+	c.id,
+	c.content,
+	a.title article_name,
+	a.id aid,
+	FROM_UNIXTIME(c.comment_time/1000,'%Y-%m-%d %H:%i:%s')as comment_time,
+	c.visitor_name nickname,
+	c.parent_id,
+	c.root_id
+    FROM
+        tb_blog_comment c
+    LEFT JOIN tb_blog_article a ON c.target_key = a.id
+    LEFT JOIN tb_blog_user u ON c.user_id = u.id
+    HAVING c.parent_id='' and c.root_id=''
+
+     order by c.comment_time desc
+     limit ${pageQuery.limitFirst},${pageQuery.showCount}
+    </select>
+    <select id="findACommentListByRootCount" resultType="int" parameterType="aCommentPageQueryVo">
+        SELECT
+            count(*)
+        FROM
+            tb_blog_comment c
+        where
+            c.parent_id = ''
+        AND c.root_id = ''
+    </select>
+    <select id="findCommentByid" resultType="comment" parameterType="string">
+       select * from tb_blog_comment where id=#{id}
+    </select>
+
+    <select id="findUserById" parameterType="int" resultType="blogUser">
+        select * from tb_blog_user where id=#{userId}
+    </select>
+    <select id="findDelCommentId" parameterType="string" resultType="string">
+        select id from tb_blog_comment where id=#{id} or root_id=#{id} or parent_id=#{id}
+    </select>
+
+
+    <delete id="delCommentByids">
+        delete from tb_blog_comment where id in
+        <foreach collection="list" index="index" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </delete>
+    <delete id="delCommentZanByIds">
+        delete from tb_blog_comment_zan where comment_id in
+        <foreach collection="list" index="index" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </delete>
+
+    <select id="findCommentIsReply" parameterType="string" resultType="int">
+        select count(*) from tb_blog_comment where parent_id=#{id} and user_id=1
+    </select>
+
+    <select id="findCommentAllChild" parameterType="string" resultType="childComment">
+        select * from tb_blog_comment where root_id=#{id}
+    </select>
+    <select id="findCommentAllChildCount" parameterType="string" resultType="int">
+        select count(*) from tb_blog_comment where root_id=#{id}
+    </select>
+
+</mapper>

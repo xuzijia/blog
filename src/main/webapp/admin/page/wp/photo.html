@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="icon" href="images/face.jpg">
+
+
+    <link rel="stylesheet" href="/commons/layui/css/layui.css" media="all"/>
+    <script type="text/javascript" src="/commons/layui/layui.js"></script>
+    <link rel="stylesheet" href="/commons/icon/iconfont.css">
+
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/wp.css">
+    <script type="text/javascript" src="/commons/js/common.js"></script>
+    <script type="text/javascript" src="../../js/wp/wp.js"></script>
+</head>
+<body>
+<div class="padding10">
+    <blockquote class="layui-elem-quote">
+        我的图片
+    </blockquote>
+    <div class="btn" style="margin-top: 10px;">
+        <a class="layui-btn  layui-btn-normal"><i class="iconfont icon-download"></i> 下载</a>
+    </div>
+    <hr style="margin-top: 20px;">
+    <!--懒加载图片-->
+    <div class="photo" id="img-list">
+        <div class="photo-item" style="display: none">
+            <div class="img-title">
+                <input type="checkbox">
+                <span>2016-06-01</span>
+            </div>
+            <div class="img-list" >
+                <div class="img">
+                    <img src="/admin/page/wp/img/1.jpg" layer-src="/admin/page/wp/img/1.jpg" alt="这是标题">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

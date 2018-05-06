@@ -1,0 +1,13 @@
+{
+  "id":1,
+  "title": "这是标题",
+  "category":1,
+  "thumbPic":"/admin/images/timg.jpg",
+  "summary":"简介",
+  "content":"<h1>哈哈哈哈<h1>",
+  "label":[1,2,8],
+  "isPublic": 1,
+  "isTop": 1,
+  "status": 1,
+  "isComment":1
+}

@@ -1,0 +1,84 @@
+.layui-badge{
+    height: auto;
+    line-height:25px;
+    width:80px;
+}
+.thumb{
+    padding: 15px 0px;
+    width: 30%;
+    border-radius: 3px;
+    border: 1px dashed #c1c5bf;
+    text-align: center;
+    color:#8D8D8D;
+}
+.show-thumb{
+    position: relative;
+    cursor: pointer;
+}
+.show-thumb img{
+    width: 125px;
+    height: 125px;
+}
+.show-thumb i{
+    position: absolute;
+    top:5px;
+    right: 5px;
+    color: #5d5d5d;
+    font-size: 18px;
+    cursor: pointer;
+    display: none;
+    font-weight: bold;
+}
+.show-thumb:hover i{
+    display: block;
+}
+.thumb i{
+    font-size: 72px;
+    color: #1E9FFF;
+    display: block;
+
+}
+.layui-elem-quote-custom{
+    padding: 10px;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+.label{
+    border: 1px solid #e6e6e6;
+    padding: 10px;
+    height: auto;
+    max-height: 283px;
+    overflow-y: auto;
+}
+.publish{
+    border: 1px solid #e6e6e6;
+    padding-left: 0;
+}
+.layui-form-checkbox{
+    height: 20px;
+    line-height: 18px;
+    margin-bottom: 10px;
+
+}
+.icon-p{
+    padding-right: 5px;
+}
+
+.layui-form-label-custom{
+    width: 100px;
+    text-align: left;
+}
+
+.publish-btn{
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-right: 20px;
+    text-align: right;
+}
+
+input[type=checkbox] + div span{
+    font-size: 12px;
+}
+.layui-form-selected dl{
+    overflow: scroll;
+}

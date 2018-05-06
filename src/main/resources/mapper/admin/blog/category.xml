@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--文章分类-->
+<mapper namespace="com.xuzijia.admin.blog.mapper.CategoryMapper">
+    <select id="findCategory" resultType="category">
+        select * from tb_blog_category
+    </select>
+
+    <insert id="addCategory" parameterType="Category">
+        insert into tb_blog_category(name) values(#{name})
+    </insert>
+
+    <select id="findCategoryAndCount" resultType="categoryVo">
+      select *, (select count(*) count from tb_blog_article where category_id=c.id) count from tb_blog_category c order by count desc
+    </select>
+
+    <delete id="delCategory" parameterType="string">
+        delete from tb_blog_category where id=#{id}
+    </delete>
+
+    <select id="findArticleByCid" parameterType="string" resultType="int">
+        select count(*) from tb_blog_article where category_id=#{id}
+    </select>
+
+    <select id="checkCategoryName" parameterType="string" resultType="int">
+        select count(*) from tb_blog_category where name=#{name}
+    </select>
+
+    <update id="updateCategory" parameterType="category">
+        update tb_blog_category set name=#{name} where id=#{id}
+    </update>
+
+</mapper>

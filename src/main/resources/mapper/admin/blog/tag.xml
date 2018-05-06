@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--文章标签-->
+<mapper namespace="com.xuzijia.admin.blog.mapper.TagMapper">
+    <select id="findTag" resultType="tag">
+        select * from tb_blog_tag;
+    </select>
+
+    <insert id="addTag" parameterType="tag">
+        insert into tb_blog_tag(name,category_id) values(#{name},#{categoryId})
+    </insert>
+
+    <select id="findTagAndCount" resultType="tagVo">
+      select * from tb_blog_tag
+    </select>
+
+    <update id="updateTag" parameterType="tag">
+        update tb_blog_tag set name=#{name} where id=#{id}
+    </update>
+
+    <delete id="delTag" parameterType="string">
+        delete from tb_blog_tag where id=#{id}
+    </delete>
+
+    <select id="checkTagName" parameterType="string" resultType="int">
+        select count(*) from tb_blog_tag where name=#{name}
+    </select>
+
+    <select id="findTagById" parameterType="list" resultType="tag">
+      select * from tb_blog_tag where id
+        IN
+        <foreach collection="array" index="index" item="item"
+                 open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </select>
+
+</mapper>

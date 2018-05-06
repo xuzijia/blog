@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>评论管理</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="icon" href="images/face.jpg">
+
+    <link rel="stylesheet" href="/commons/layui/css/layui.css" media="all"/>
+    <script type="text/javascript" src="/commons/layui/layui.js"></script>
+    <link rel="stylesheet" href="/commons/icon/iconfont.css">
+
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/blog.css">
+
+    <style>
+        .layui-table-cell {
+            height: auto;
+            line-height: 28px;
+            overflow:visible;
+            text-overflow:inherit;
+            white-space:normal;
+        }
+        .btn{
+            font-size: 24px;
+        }
+
+        a i{
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="padding10">
+        <blockquote class="layui-elem-quote">
+            评论列表
+        </blockquote>
+
+        <div class="tools">
+            <div class="btn float-left">
+                <a href="javascript:;" class="layui-btn layui-btn-danger batchdel">批量删除</a>
+            </div>
+            <div class="search layui-inline margin-left-20">
+                <!--搜索框-->
+                <div class="layui-form-item">
+                    <div class="layui-input-inline">
+                        <input type="text" name="search" class="layui-input  " placeholder="请搜索评论">
+                    </div>
+                    <a href="javascript:;" class="layui-btn layui-btn-normal" id="search"><i class="iconfont icon-search" style="margin-right: 0"></i> 搜索</a>
+                </div>
+            </div>
+        </div>
+
+        <!--评论列表-->
+        <table id="comment-table" lay-filter="comment-table">
+
+        </table>
+
+
+    </div>
+
+
+    <script type="text/html" id="avatar">
+        <!--判断头像是否存在-->
+        {{# var avatar=d.avatar }}
+        {{# if(avatar==null){ }}
+        <img src="/blog/images/default_avatar.gif" alt="">
+        {{# } else{ }}
+        <span class="layui-badge layui-bg-blue nfb" style="cursor: pointer"  aid="{{d.id}}">qq互联头像</span>
+        {{# } }}
+
+    </script>
+    <script type="text/html" id="content">
+      <!--判断评论是否已经回复 如果回复了 添加bg图片-->
+        {{#var flag=d.reply}}
+      {{# if(flag){ }}
+      <div style="background: url('/blog/images/yfh.png') no-repeat center ;height: 50px">{{d.content}}</div>
+      {{# } else{ }}
+      {{d.content}}
+        {{# } }}
+    </script>
+
+    <script type="text/html" id="comment-btn">
+        <a href="javascript:;" title="查看对话" class="showchild"  data-id="{{d.id}}">
+            <i class="iconfont icon-xiaoxi btn" style="color: #00b7ee;"></i>
+        </a>
+        <a href="javascript:;" title="回复" class="hf" data-id="{{d.id}}" data-name="{{d.nickname}}">
+            <i class="iconfont icon-edit" style="color: #5fc04c" ></i>
+        </a>
+        <a href="javascript:;" title="删除" class="del" data-id="{{d.id}}">
+            <i class="iconfont icon-unie046 btn" style="color: red;font-size: 20px"></i>
+        </a>
+    </script>
+
+</body>
+<script src="/commons/js/common.js"></script>
+<script src="../../js/blog/comment.js"></script>
+</html>

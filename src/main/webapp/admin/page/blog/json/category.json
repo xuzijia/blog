@@ -1,0 +1,11 @@
+{
+  "code": 0,
+  "msg": "success",
+  "count": 3,
+  "data": [
+    {"id":1,"name":"JAVA开发","count":20},
+    {"id":2,"name":"前端开发","count":10},
+    {"id":3,"name":"数据库设计","count":60},
+    {"id":4,"name":"视频剪辑技术","count":22}
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "code":0,
+  "msg":"success",
+  "count":10,
+  "data":[
+    {
+      "id":"1",
+      "name":"新建文件夹",
+      "size":"80M",
+      "deleteTime":"2018-03-22 10:17",
+      "type":0,
+      "fileId":1,
+      "validTime":"10天"
+    },
+    {
+      "id":"1",
+      "name":"新建文件夹",
+      "size":"80M",
+      "deleteTime":"2018-03-22 10:17",
+      "type":0,
+      "fileId":1,
+      "validTime":"10天"
+    },
+    {
+      "id":"1",
+      "name":"新建文件夹",
+      "size":"80M",
+      "deleteTime":"2018-03-22 10:17",
+      "type":0,
+      "fileId":1,
+      "validTime":"10天"
+    },
+    {
+      "id":"1",
+      "name":"helloWorld.java",
+      "size":"5KB",
+      "deleteTime":"2018-03-22 10:17",
+      "type":1,
+      "fileId":2,
+      "validTime":"10天"
+    }
+
+  ]
+}

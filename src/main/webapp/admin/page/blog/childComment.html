@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>子评论列表</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="icon" href="images/face.jpg">
+
+    <link rel="stylesheet" href="/commons/layui/css/layui.css" media="all"/>
+    <script type="text/javascript" src="/commons/layui/layui.js"></script>
+    <link rel="stylesheet" href="/commons/icon/iconfont.css">
+
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/blog.css">
+    <style>
+        .layui-table-cell {
+            height: auto;
+            line-height: 28px;
+            overflow:visible;
+            text-overflow:inherit;
+            white-space:normal;
+        }
+        .btn{
+            font-size: 24px;
+        }
+
+        a i{
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+<div style="width:100%;text-align: center">
+    <div class="avatar" style="padding: 10px 20px;">
+        <img src="/blog/images/default_avatar.gif" alt="">
+    </div>
+    <div class="content" style="padding: 0 20px;">
+        <p style="text-align: center"><span>评论人：</span>
+        <span style="color: green" id="username"></span>
+        </p>
+        <p style="text-align: center;line-height: 30px"><span>评论内容：</span>
+        <span id="content" style="color: #00b7ee"></span>
+        </p>
+        <p style="text-align: right">
+            <span>评论时间：</span>
+            <span id="commentTime" style="font-style: italic"></span>
+            &nbsp;&nbsp;
+            <span>对话数量：</span>
+            <span style="font-weight: bold;color: red" id="count"> </span>条
+        </p>
+
+    </div>
+</div>
+
+<div id="demo"></div>
+</body>
+<script src="/commons/js/common.js"></script>
+<script src="../../js/blog/comment.js"></script>
+<script src="../../js/blog/childComment.js"></script>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="icon" href="images/face.jpg">
+
+    <link rel="stylesheet" href="/commons/layui/css/layui.css" media="all"/>
+    <script type="text/javascript" src="/commons/layui/layui.js"></script>
+    <link rel="stylesheet" href="/commons/icon/iconfont.css">
+
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/blog.css">
+
+</head>
+<body>
+<div class="padding10">
+    <blockquote class="layui-elem-quote">
+        文章列表
+    </blockquote>
+    <div class="tools">
+        <div class="btn float-left">
+            <a href="javascript:;" class="layui-btn layui-btn-normal add-article">添加文章</a>
+            <a href="javascript:;" class="layui-btn layui-btn-danger del">批量删除</a>
+        </div>
+        <div class="search layui-inline margin-left-20">
+            <!--搜索框-->
+            <div class="layui-form-item">
+                <div class="layui-input-inline">
+                    <input type="text" name="search" class="layui-input  " placeholder="请搜索文章">
+                </div>
+                <a href="javascript:;" class="layui-btn layui-btn-normal" id="search"><i class="iconfont icon-search"></i> 搜索</a>
+            </div>
+        </div>
+    </div>
+
+    <table id="article-list" lay-filter="article-list">
+
+    </table>
+
+</div>
+</body>
+
+<!--加入单元格样式-->
+<script type="text/html" id="article-status">
+    <!--判断文章状态-->
+    {{# var status=d.status }}
+    {{# if(status==0){ }}
+    <span class="layui-badge layui-bg-orange fb" style="cursor: pointer"  aid="{{d.id}}">未发布</span>
+    {{# } else if(status==1){ }}
+    <span class="layui-badge layui-bg-blue nfb" style="cursor: pointer"  aid="{{d.id}}">已发布</span>
+    {{# } }}
+
+</script>
+<script type="text/html" id="source">
+    <!--判断文章来源-->
+    {{# var isOriginal=d.isOriginal }}
+    {{# if(isOriginal==0){ }}
+    <span>转载</span>
+    {{# } else if(isOriginal==1){ }}
+    <span style="color: red">原创</span>
+    {{# } }}
+
+</script>
+<script type="text/html" id="title">
+
+    <a href="/blog/article/{{d.id}}" target="_blank">{{d.title}}</a>
+
+</script>
+<script type="text/html" id="article-isPublic">
+    <!--判断文章是否公开-->
+    <input type="checkbox" name="isPublic" aid={{d.id }} value="{{d.isPublic}}" lay-skin="switch" lay-text="公开|私密"
+           lay-filter="isPublic" {{ d.isPublic== 1 ? 'checked' : '' }}>
+</script>
+<script type="text/html" id="article-isTop">
+    <!--判断文章是否置顶-->
+    <input type="checkbox" name="isTop" aid={{d.id }} value="{{d.isTop}}" title="置顶"
+           lay-filter="isTop" {{ d.isTop== 1 ? 'checked' : '' }}>
+</script>
+
+<script type="text/html" id="article-btn">
+    <a href="javascript:;" class="layui-btn layui-btn-xs layui-btn-normal updatebtn" lay-event="edit" ><i
+            class="iconfont icon-edit" ></i> 修改</a>
+    <a href="javascript:;" class="layui-btn layui-btn-xs layui-btn-danger delbtn" lay-event="del"><i
+            class="iconfont icon-del"></i> 删除</a>
+
+
+</script>
+<script src="/commons/js/common.js"></script>
+<script type="text/javascript" src="../../js/blog/article.js"></script>
+</html>

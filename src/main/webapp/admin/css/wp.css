@@ -1,0 +1,124 @@
+.d{
+    font-size: 14px;
+}
+.d a{
+    color: #0099CB;
+}
+.d span{
+    color: #b6b6b6;
+}
+.d .curr-dir{
+    color: #8D8D8D;
+}
+td .icon-*{
+    font-size: 18px;
+    padding-right: 10px;
+}
+.icon-file-b-:before{
+    color: #ffbb04;
+}
+.icon-file{
+    margin: 20px 5px;
+}
+.icon-file > div{
+    box-sizing: border-box;
+    padding: 0 10px;
+    width:120px;
+    height: 107px;
+    float: left;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    transition: background .2s ease-in-out;
+}
+.icon-img i:before{
+    font-size: 72px;
+}
+.filename{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+}
+.filename a{
+    color:#666666;
+    font-size: 12px;
+}
+.filename a:hover{
+    color:#0099CB;
+}
+
+.icon-file > div:hover{
+    background-color: #f1f5fa;
+    border-radius: 10px;
+}
+.icon-file > div:hover .select{
+    display: block !important;
+}
+.icon-file .select{
+    position: absolute;
+    top:5px;
+    left:5px;
+    color:#0099CB;
+    opacity: 0.5;
+    display: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.click-select{
+    display: block;
+    opacity: 1;
+}
+.click-select-file-icon{
+    background-color: #f1f5fa;
+    border-radius: 10px;
+    border:1px solid #90c3fd;
+}
+.file-gird{
+    overflow: hidden;
+}
+
+
+
+.img img{
+    max-width: 150px;
+    max-height: 150px;
+
+}
+.img-list .img{
+    float: left;
+    margin-right: 10px;
+    cursor: pointer;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    background: #eeeeee;
+}
+.photo{
+    margin-top: 10px;
+}
+
+.photo .photo-item{
+    margin: 15px 15px;
+
+}
+.photo-item .img-title{
+    padding: 10px 0px;
+    color: #8D8D8D;
+}
+.photo .photo-item{
+    clear: both;
+    font-size: 16px;
+}
+
+.img img:hover{
+    opacity: 0.8;
+}
+.layui-flow-more{
+    clear:both;
+    padding-top: 20px;
+}

@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--博客文章sql语句操作-->
+<mapper namespace="com.xuzijia.admin.blog.mapper.ArticleMapper">
+    <sql id="limitWhere">
+        <if test="pageQuery!=null">
+            limit ${pageQuery.limitFirst},${pageQuery.showCount}
+        </if>
+    </sql>
+
+    <sql id="articleWhere">
+        <if test="articleCustom!=null">
+            <if test="articleCustom.categoryId!=null">
+                and c.id=#{articleCustom.categoryId}
+            </if>
+            <if test="articleCustom.tagId!=null">
+                and locate(${articleCustom.tagId},a.label_id)>0
+            </if>
+            <if test="articleCustom.title!=null">
+                and a.title like '%${articleCustom.title}%'
+            </if>
+        </if>
+    </sql>
+
+    <insert id="addArticle" parameterType="article">
+        insert into tb_blog_article
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id!=null">
+                id,
+            </if>
+            <if test="title!=null">
+                title,
+            </if>
+            <if test="summary!=null">
+                summary,
+            </if>
+            <if test="content!=null">
+                content,
+            </if>
+            <if test="labelId!=null">
+                label_id,
+            </if>
+            <if test="status!=null">
+                status,
+            </if>
+            <if test="isPublic!=null">
+                is_public,
+            </if>
+            <if test="thumbPic!=null">
+                thumb_pic,
+            </if>
+            <if test="isTop!=null">
+                is_top,
+            </if>
+            <if test="createTime!=null">
+                create_time,
+            </if>
+            <if test="updateTime!=null">
+                update_time,
+            </if>
+            <if test="createUser!=null">
+                create_user,
+            </if>
+            <if test="readCount!=null">
+                read_count,
+            </if>
+            <if test="praise!=null">
+                praise,
+            </if>
+            <if test="isComment!=null">
+                is_comment,
+            </if>
+            <if test="categoryId!=null">
+                category_id,
+            </if>
+            <if test="isOriginal!=null">
+                is_original,
+            </if>
+            <if test="sourceUrl!=null">
+                source_url
+            </if>
+
+        </trim>
+
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id!=null">
+                #{id},
+            </if>
+            <if test="title!=null">
+                #{title},
+            </if>
+            <if test="summary!=null">
+                #{summary},
+            </if>
+            <if test="content!=null">
+                #{content},
+            </if>
+            <if test="labelId!=null">
+                #{labelId},
+            </if>
+            <if test="status!=null">
+                #{status},
+            </if>
+            <if test="isPublic!=null">
+                #{isPublic},
+            </if>
+            <if test="thumbPic!=null">
+                #{thumbPic},
+            </if>
+            <if test="isTop!=null">
+                #{isTop},
+            </if>
+            <if test="createTime!=null">
+                #{createTime},
+            </if>
+            <if test="updateTime!=null">
+                #{updateTime},
+            </if>
+            <if test="createUser!=null">
+                #{createUser},
+            </if>
+            <if test="readCount!=null">
+                #{readCount},
+            </if>
+            <if test="praise!=null">
+                #{praise},
+            </if>
+            <if test="isComment!=null">
+                #{isComment},
+            </if>
+            <if test="categoryId!=null">
+                #{categoryId},
+            </if>
+            <if test="isOriginal!=null">
+                #{isOriginal},
+            </if>
+            <if test="sourceUrl!=null">
+                #{sourceUrl}
+            </if>
+
+        </trim>
+
+    </insert>
+
+    <select id="findArticle" parameterType="articleQueryVo" resultType="articleVo">
+        select a.*,c.`name` category_name,date_format(a.create_time, '%Y-%m-%d %H:%i:%S') c_time from tb_blog_article
+        a,tb_blog_category c
+        where a.category_id=c.id
+        <include refid="articleWhere"/>
+        order by update_time desc
+        <include refid="limitWhere"/>
+    </select>
+    <select id="findArticleCount" parameterType="articleQueryVo" resultType="int">
+        select count(*) from tb_blog_article a,tb_blog_category c where a.category_id=c.id
+        <include refid="articleWhere"/>
+    </select>
+
+    <select id="findArticleById" parameterType="string" resultType="article">
+        select * from tb_blog_article where id=#{id}
+    </select>
+
+    <update id="updateArticle" parameterType="article">
+        update tb_blog_article
+        <set>
+            <if test="title!=null">
+                title=#{title},
+            </if>
+            <if test="summary!=null">
+                summary=#{summary},
+            </if>
+            <if test="content!=null">
+                content=#{content},
+            </if>
+            <if test="labelId!=null">
+                label_id=#{labelId},
+            </if>
+            <if test="status!=null">
+                status=#{status},
+            </if>
+            <if test="isPublic!=null">
+                is_public=#{isPublic},
+            </if>
+            <if test="thumbPic!=null">
+                thumb_pic=#{thumbPic},
+            </if>
+            <if test="isTop!=null">
+                is_top=#{isTop},
+            </if>
+            <if test="createTime!=null">
+                create_time=#{createTime},
+            </if>
+            <if test="updateTime!=null">
+                update_time=#{updateTime},
+            </if>
+            <if test="createUser!=null">
+                create_user=#{createUser},
+            </if>
+            <if test="readCount!=null">
+                read_count=#{readCount},
+            </if>
+            <if test="praise!=null">
+                praise=#{praise},
+            </if>
+            <if test="isComment!=null">
+                is_comment=#{isComment},
+            </if>
+            <if test="categoryId!=null">
+                category_id=#{categoryId},
+            </if>
+            <if test="isOriginal!=null">
+                is_original=#{isOriginal},
+            </if>
+            <if test="sourceUrl!=null">
+                source_url=#{sourceUrl}
+            </if>
+        </set>
+        where id=#{id}
+    </update>
+
+    <delete id="delArticle" parameterType="string">
+        delete from tb_blog_article where id=#{id}
+    </delete>
+
+    <select id="findArticleList" resultType="article" parameterType="articleQueryVo">
+        select a.id,title,summary,label_id,read_count,create_time,thumb_pic,name categoryName,is_top,is_original from
+        tb_blog_article a,tb_blog_category c
+        where c.id=a.category_id and is_public=1 and status=1
+        <include refid="articleWhere"/>
+        order by is_top desc ,create_time desc
+        <include refid="limitWhere"/>
+    </select>
+    <select id="findHotArticleList" resultType="article">
+          select a.id,title,category_id,is_public ,status from tb_blog_article a,tb_blog_category c
+        where c.id=a.category_id and is_public=1 and status=1
+        order by read_count desc limit 0,5
+    </select>
+    <select id="findarticleByCid" parameterType="int" resultType="article">
+          select id,title,category_id,is_public ,status from tb_blog_article
+        where category_id=#{categoryId} and is_public=1 and status=1
+        order by create_time desc limit 0,5
+    </select>
+
+
+    <select id="findArticleListCount" resultType="int" parameterType="articleQueryVo">
+        select count(*) from tb_blog_article a,tb_blog_category c where c.id=a.category_id and is_public=1 and status=1
+        <include refid="articleWhere"/>
+    </select>
+
+</mapper>

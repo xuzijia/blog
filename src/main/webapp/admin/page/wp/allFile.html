@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="icon" href="images/face.jpg">
+
+    <link rel="stylesheet" href="/commons/layui/css/layui.css" media="all"/>
+    <script type="text/javascript" src="/commons/layui/layui.js"></script>
+    <link rel="stylesheet" href="/commons/icon/iconfont.css">
+
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/wp.css">
+
+    <script type="text/javascript" src="/commons/js/common.js"></script>
+    <script type="text/javascript" src="../../js/wp/wp.js"></script>
+</head>
+<body>
+<div class="padding10">
+    <blockquote class="layui-elem-quote">
+        我的全部文件
+    </blockquote>
+
+    <!--top-->
+    <div class="top">
+        <div class="btn layui-inline float-left">
+            <a class="layui-btn  layui-btn-normal" id="uploadFile"><i class="iconfont icon-upload"></i> 上传</a>
+            <a class="layui-btn  layui-btn-normal" id="createDir"><i
+                    class="iconfont icon-wangpanxinjianwenjianjia-copy"></i> 新建文件夹</a>
+            <a class="layui-btn  layui-btn-normal"><i class="iconfont icon-download"></i> 下载</a>
+            <a class="layui-btn  layui-btn-danger"><i class="iconfont icon-del"></i> 删除</a>
+            <a class="layui-btn  layui-btn-normal"> 重命名</a>
+        </div>
+        <div class="search layui-inline float-right">
+            <!--搜索框-->
+            <div class="layui-form-item">
+                <div class="layui-input-inline">
+                    <input type="text" name="href" class="layui-input  " placeholder="请搜索文件">
+                </div>
+                <a href="" class="layui-btn layui-btn-normal "><i class="iconfont icon-search"></i> 搜索</a>
+                <!--图标-->
+                <div class="icon layui-inline">
+                    <a href=""><i class="iconfont icon-paixu-jiangxu app-color">
+                    </i></a>
+                    <a href="javascript:;" id="file-mode" mode="list"><i class="iconfont icon-apps app-color"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--文件目录引导-->
+    <div class="d clear-float">
+        <span class="dir">
+            <a href="">返回上一级</a> <span> | </span>
+            <a href="">全部文件</a> <span>&gt;</span>
+            <span class="curr-dir">apps</span>
+        </span>
+    </div>
+    <div class="dragUpload" STYLE="height: auto;width: 100%">
+        <!--网盘文件显示区域 表格版本-->
+        <table id="table-file"></table>
+
+
+        <!--网盘文件显示区域 网格版本-->
+        <div class="file-gird">
+            <input type="checkbox" name="" id="selectAll" style="margin-top: 10px;cursor: pointer">
+            <div class="icon-file">
+            </div>
+        </div>
+    </div>
+
+    <!--加入单元格样式-->
+    <script type="text/html" id="filename">
+        <!--判断是否是文件夹0 或者是文件1-->
+        {{# if(d.type==0){ }}
+        <i class="iconfont icon-file-b-"></i>
+        {{# } else { }}
+
+        <!--判断文件类型 显示不同的图标-->
+        <i class="iconfont icon-file-b-1"></i>
+        {{# } }}
+        <a href="" class="layui-table-link">{{ d.name }}</a>
+    </script>
+</div>
+</body>
+
+
+</html>

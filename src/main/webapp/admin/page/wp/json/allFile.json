@@ -1,0 +1,216 @@
+{
+  "code":0,
+  "msg":"success",
+  "count":10,
+  "data":[
+    {
+      "id":"1",
+      "name":"新建文件夹",
+      "size":"80M",
+      "updateTime":"2018-03-22 10:17",
+      "type":0
+    },
+    {
+      "id":"2",
+      "name":"新建文件夹1",
+      "size":"1G",
+      "updateTime":"2018-03-22 10:17",
+      "type":0
+    },
+    {
+      "id":"3",
+      "name":"新建文件夹2",
+      "size":"80M",
+      "updateTime":"2018-03-22 10:17",
+      "type":0
+    },
+    {
+      "id":"4",
+      "name":"新建文档.txt",
+      "size":"10KB",
+      "updateTime":"2018-03-22 10:17",
+      "type":1,
+      "fileType":"pdf"
+    },
+    {
+      "id":"3",
+      "name":"新建文件夹2",
+      "size":"80M",
+      "updateTime":"2018-03-22 10:17",
+      "type":0
+    },
+    {
+      "id":"4",
+      "name":"新建文档.txt",
+      "size":"10KB",
+      "updateTime":"2018-03-22 10:17",
+      "type":1,
+      "fileType":"pdf"
+    },
+    {
+      "id":"3",
+      "name":"新建文件夹2",
+      "size":"80M",
+      "updateTime":"2018-03-22 10:17",
+      "type":0
+    },
+    {
+      "id":"4",
+      "name":"新建文档.txt",
+      "size":"10KB",
+      "updateTime":"2018-03-22 10:17",
+      "type":1,
+      "fileType":"pdf"
+    },
+    {
+      "id":"3",
+      "name":"新建文件夹2",
+      "size":"80M",
+      "updateTime":"2018-03-22 10:17",
+      "type":0
+    },
+    {
+      "id":"4",
+      "name":"新建文档.txt",
+      "size":"10KB",
+      "updateTime":"2018-03-22 10:17",
+      "type":1,
+      "fileType":"pdf"
+    },
+    {
+      "id":"3",
+      "name":"新建文件夹2",
+      "size":"80M",
+      "updateTime":"2018-03-22 10:17",
+      "type":0
+    },
+    {
+      "id":"4",
+      "name":"新建文档.txt",
+      "size":"10KB",
+      "updateTime":"2018-03-22 10:17",
+      "type":1,
+      "fileType":"pdf"
+    },
+    {
+      "id":"3",
+      "name":"新建文件夹2",
+      "size":"80M",
+      "updateTime":"2018-03-22 10:17",
+      "type":0
+    },
+    {
+      "id":"4",
+      "name":"新建文档.txt",
+      "size":"10KB",
+      "updateTime":"2018-03-22 10:17",
+      "type":1,
+      "fileType":"pdf"
+    },
+    {
+      "id":"3",
+      "name":"新建文件夹2",
+      "size":"80M",
+      "updateTime":"2018-03-22 10:17",
+      "type":0
+    },
+    {
+      "id":"4",
+      "name":"新建文档.txt",
+      "size":"10KB",
+      "updateTime":"2018-03-22 10:17",
+      "type":1,
+      "fileType":"pdf"
+    },
+    {
+      "id":"3",
+      "name":"新建文件夹2",
+      "size":"80M",
+      "updateTime":"2018-03-22 10:17",
+      "type":0
+    },
+    {
+      "id":"4",
+      "name":"新建文档.txt",
+      "size":"10KB",
+      "updateTime":"2018-03-22 10:17",
+      "type":1,
+      "fileType":"pdf"
+    },
+    {
+      "id":"3",
+      "name":"新建文件夹2",
+      "size":"80M",
+      "updateTime":"2018-03-22 10:17",
+      "type":0
+    },
+    {
+      "id":"4",
+      "name":"新建文档.txt",
+      "size":"10KB",
+      "updateTime":"2018-03-22 10:17",
+      "type":1,
+      "fileType":"pdf"
+    },
+    {
+      "id":"3",
+      "name":"新建文件夹2",
+      "size":"80M",
+      "updateTime":"2018-03-22 10:17",
+      "type":0
+    },
+    {
+      "id":"4",
+      "name":"新建文档.txt",
+      "size":"10KB",
+      "updateTime":"2018-03-22 10:17",
+      "type":1,
+      "fileType":"pdf"
+    },
+    {
+      "id":"3",
+      "name":"新建文件夹2",
+      "size":"80M",
+      "updateTime":"2018-03-22 10:17",
+      "type":0
+    },
+    {
+      "id":"4",
+      "name":"新建文档.txt",
+      "size":"10KB",
+      "updateTime":"2018-03-22 10:17",
+      "type":1,
+      "fileType":"pdf"
+    },
+    {
+      "id":"3",
+      "name":"新建文件夹2",
+      "size":"80M",
+      "updateTime":"2018-03-22 10:17",
+      "type":0
+    },
+    {
+      "id":"4",
+      "name":"新建文档.txt",
+      "size":"10KB",
+      "updateTime":"2018-03-22 10:17",
+      "type":1,
+      "fileType":"pdf"
+    },
+    {
+      "id":"3",
+      "name":"新建文件夹2",
+      "size":"80M",
+      "updateTime":"2018-03-22 10:17",
+      "type":0
+    },
+    {
+      "id":"4",
+      "name":"新建文档.txt",
+      "size":"10KB",
+      "updateTime":"2018-03-22 10:17",
+      "type":1,
+      "fileType":"pdf"
+    }
+  ]
+}

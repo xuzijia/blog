@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="/commons/layui/css/layui.css">
+    <link rel="stylesheet" href="/commons/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/commons/animate/animate.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>分享</title>
+</head>
+<body class="animated fadeIn">
+<!--顶部导航栏信息-->
+<#include "blog/header.ftl">
+    <!--顶部导航栏结束-->
+<hr class="header-hr">
+<!--统计、时间戳部分-->
+<div class="layui-container">
+    <blockquote class="layui-elem-quote">
+        分享统计：共【<span class="sum-font">51</span>】个分享；注：<span class="sum-font">资源全部收集于网络，侵告删之</span>；与人方便与己方便！~\(≧▽≦)/~！
+        <div class="clock layui-show-md-inline-block layui-show-lg-inline-block layui-hide-xs layui-hide-sm"><span
+                class="clock-font">当前日期</span>：<span id="current-datetime"></span></div>
+    </blockquote>
+</div>
+<!--统计、时间戳或部分结束-->
+<!--正文部分-->
+<div id="note-body" class="layui-container">
+    <div id="note-operate" class="layui-row">
+        <div class="layui-col-lg4 layui-col-md4 layui-col-sm5 layui-col-xs12">
+            <input type="text" name="title" required lay-verify="required" placeholder="敲入关键字，按Enter键搜索"
+                   autocomplete="off"
+                   class="layui-input search-box" style="height: 35px; ">
+        </div>
+        <div class="layui-col-lg-offset4 layui-col-lg4 layui-col-md-offset4 layui-col-md4 layui-col-sm-offset3 layui-col-sm4 layui-hide-xs"
+             style="text-align: right;">
+            <div class="layui-btn-group">
+                <button id="collaspan" class="layui-btn layui-btn-primary layui-btn-sm">
+                    <i class="fa fa-angle-double-down"></i>
+                </button>
+                <button id="expand" class="layui-btn layui-btn-primary layui-btn-sm">
+                    <i class="fa fa-angle-double-up"></i>
+                </button>
+                <button id="edit" class="layui-btn layui-btn-primary layui-btn-sm">
+                    <i class="fa fa-edit"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <ul class="layui-timeline" id="timeline">
+        <li class="layui-timeline-item">
+            <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+            <div class="layui-timeline-content layui-text">
+                <h3 class="layui-timeline-title">8月18日</h3>
+                <div class="timeline-body">
+                    <p>用cglib生成的代理类取不到注解的问题</p>
+                    <p>直接在注解上面加@Inherited
+                        CGLIB 返回的代理类是基于原来类的子类的，加上这个标志就可以令子类继承这个注解</p>
+                    <hr>
+                    <p> eclipse tomcat 启动45秒超时问题</p>
+                    <p>找到workplace路径/.metadata/.plugins /org.eclipse.wst.server.core/servers.xml，
+                        编辑start-timeout，把45改大点就好。</p>
+                </div>
+            </div>
+        </li>
+        <li class="layui-timeline-item">
+            <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+            <div class="layui-timeline-content layui-text">
+                <h3 class="layui-timeline-title">8月18日</h3>
+                <div class="timeline-body">
+                    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86
+                            src="//music.163.com/outchain/player?type=2&id=28138493&auto=0&height=66"></iframe>
+                </div>
+            </div>
+        </li>
+        <li class="layui-timeline-item">
+            <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+            <div class="layui-timeline-content layui-text">
+                <h3 class="layui-timeline-title">8月18日 用cglib生成的代理类取不到注解的问题用cglib生成的代理类取不到注解的问题用cglib生成的代理类取不到注解的问题</h3>
+                <div class="timeline-body">
+                    <p>用cglib生成的代理类取不到注解的问题</p>
+                    <p>直接在注解上面加@Inherited
+                        CGLIB 返回的代理类是基于原来类的子类的，加上这个标志就可以令子类继承这个注解</p>
+                    <hr>
+                    <p> eclipse tomcat 启动45秒超时问题</p>
+                    <p>找到workplace路径/.metadata/.plugins /org.eclipse.wst.server.core/servers.xml，
+                        编辑start-timeout，把45改大点就好。</p>
+                </div>
+            </div>
+        </li>
+        <li class="layui-timeline-item">
+            <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+            <div class="layui-timeline-content layui-text">
+                <h3 class="layui-timeline-title">8月18日</h3>
+                <div class="timeline-body">
+                    <p>用cglib生成的代理类取不到注解的问题</p>
+                    <p>直接在注解上面加@Inherited
+                        CGLIB 返回的代理类是基于原来类的子类的，加上这个标志就可以令子类继承这个注解</p>
+                    <hr>
+                    <p> eclipse tomcat 启动45秒超时问题</p>
+                    <p>找到workplace路径/.metadata/.plugins /org.eclipse.wst.server.core/servers.xml，
+                        编辑start-timeout，把45改大点就好。</p>
+                </div>
+            </div>
+        </li>
+        <li class="layui-timeline-item">
+            <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+            <div class="layui-timeline-content layui-text">
+                <h3 class="layui-timeline-title">8月18日</h3>
+                <div class="timeline-body">
+                    <p>用cglib生成的代理类取不到注解的问题</p>
+                    <p>直接在注解上面加@Inherited
+                        CGLIB 返回的代理类是基于原来类的子类的，加上这个标志就可以令子类继承这个注解</p>
+                    <hr>
+                    <p> eclipse tomcat 启动45秒超时问题</p>
+                    <p>找到workplace路径/.metadata/.plugins /org.eclipse.wst.server.core/servers.xml，
+                        编辑start-timeout，把45改大点就好。</p>
+                </div>
+            </div>
+        </li>
+        <li class="layui-timeline-item">
+            <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+            <div class="layui-timeline-content layui-text">
+                <h3 class="layui-timeline-title">8月18日</h3>
+                <div class="timeline-body">
+                    <p>用cglib生成的代理类取不到注解的问题</p>
+                    <p>直接在注解上面加@Inherited
+                        CGLIB 返回的代理类是基于原来类的子类的，加上这个标志就可以令子类继承这个注解</p>
+                    <hr>
+                    <p> eclipse tomcat 启动45秒超时问题</p>
+                    <p>找到workplace路径/.metadata/.plugins /org.eclipse.wst.server.core/servers.xml，
+                        编辑start-timeout，把45改大点就好。</p>
+                </div>
+            </div>
+        </li>
+        <li class="layui-timeline-item layui-note-cover">
+            <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+            <div class="layui-timeline-content layui-text">
+                <h3 class="layui-timeline-title">笔记封面</h3>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<!--底部-->
+<div class="layui-fluid bottom-nav">
+    <div class="layui-row">
+        <div class="layui-col-lg4 layui-col-lg-offset4 copyright">
+            <p style="text-align: center;"><i class="fa fa-copyright"></i>&nbsp;2015-2018 赣ICP备15003721号-2 ☆
+                designed by Wuwenbin in 2018 ver3.
+            </p>
+        </div>
+    </div>
+</div>
+<!--底部结束-->
+<script src="/commons/jquery/jquery-2.1.4.min.js"></script>
+<script src="/commons/hc-sticky/hc-sticky.min.js"></script>
+<script src="/commons/layui/layui.js"></script>
+<script src="js/index.js"></script>
+
+<!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+<!--[if lt IE 9]>
+<script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+<script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</body>
+</html>

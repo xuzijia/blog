@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+         http://www.springframework.org/schema/aop/spring-aop.xsd
+         http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context.xsd
+         http://www.springframework.org/schema/tx
+         http://www.springframework.org/schema/tx/spring-tx.xsd
+        ">
+
+    <!--扫描注解包-->
+    <context:component-scan base-package="com.xuzijia"/>
+
+    <!--加载数据库参数文件-->
+    <context:property-placeholder location="classpath:jdbc.properties"/>
+
+    <!--配置数据源 dbcp-->
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="${jdbc.driver}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
+
+    <!--mybatis+spring整合-->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <!--mybatis文件-->
+        <property name="configLocation" value="classpath:mybatis-config.xml"/>
+        <!--mapper映射文件-->
+        <property name="mapperLocations">
+            <array>
+                <value>classpath:mapper/admin/*/*.xml</value>
+                <value>classpath:mapper/blog/*.xml</value>
+            </array>
+
+        </property>
+        <!--配置实体类别名-->
+        <property name="typeAliasesPackage"
+                  value="com.xuzijia.admin.test.entity,com.xuzijia.admin.blog.entity,com.xuzijia.blog.entity,com.xuzijia.admin.base.entity"/>
+    </bean>
+
+    <!--配置mybaitis代理接口 -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <!--mapper接口位置 -->
+        <property name="basePackage" value="com.xuzijia.admin.*.mapper,com.xuzijia.blog.mapper"/>
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+    </bean>
+
+    <!-- 事务管理器 -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <!-- 数据源 -->
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!-- 通知 -->
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <!-- 传播行为 -->
+            <tx:method name="save*" propagation="REQUIRED" rollback-for="java.lang.Exception"/>
+            <tx:method name="insert*" propagation="REQUIRED" rollback-for="java.lang.Exception"/>
+            <tx:method name="delete*" propagation="REQUIRED" rollback-for="java.lang.Exception"/>
+            <tx:method name="update*" propagation="REQUIRED" rollback-for="java.lang.Exception"/>
+            <tx:method name="find*" propagation="SUPPORTS" read-only="true"/>
+            <tx:method name="get*" propagation="SUPPORTS" read-only="true"/>
+        </tx:attributes>
+    </tx:advice>
+
+    <!-- 切面 -->
+    <aop:config proxy-target-class="true">
+        <aop:advisor advice-ref="txAdvice"
+                     pointcut="execution(* com.xuzijia.admin.*.service.impl.*.*(..)) or execution(* com.xuzijia.*.service.impl.*.*(..))"/>
+    </aop:config>
+
+</beans>

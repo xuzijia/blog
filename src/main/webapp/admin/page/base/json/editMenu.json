@@ -1,0 +1,156 @@
+{
+  "code": 0,
+  "msg": "success",
+  "count": 10,
+  "data": {
+    "id":3,
+    "pid":2,
+    "parentdata": [
+      {
+        "id": 1,
+        "name": "基本管理",
+        "code": "Content_System",
+        "href": "",
+        "description": "基本管理",
+        "level": 0,
+        "parent": "顶级菜单",
+        "status": 0
+      },
+      {
+        "id": 2,
+        "name": "&emsp;&emsp;└菜单管理",
+        "n":"菜单管理",
+        "code": "Content_Menu_System",
+        "href": "/system/menu.do",
+        "description": "这是一个内容管理功能",
+        "parent": "基本管理",
+        "parentid":0,
+        "level": 1,
+        "status": 1
+      },
+      {
+        "id": 3,
+        "name": "&emsp;&emsp;&emsp;&emsp;└二级菜单",
+        "n":"二级菜单",
+        "code": "Content_Menu_System",
+        "href": "/system/menu.do",
+        "description": "测试数据",
+        "parent": "菜单管理",
+        "parentid":2,
+        "level": 2,
+        "status": 1
+      },
+      {
+        "id": 4,
+        "name": "&emsp;&emsp;&emsp;&emsp;└菜单管理",
+        "code": "Content_Menu_System",
+        "href": "/system/menu.do",
+        "description": "这是一个内容管理功能",
+        "parent": "基本管理",
+        "parentid":2,
+        "level": 2,
+        "status": 1
+      },
+      {
+        "id": 5,
+        "name": "&emsp;&emsp;└菜单管理",
+        "code": "Content_Menu_System",
+        "href": "/system/menu.do",
+        "description": "这是一个内容管理功能",
+        "parent": "基本管理",
+        "level": 0,
+        "status": 1
+      },
+      {
+        "id": 6,
+        "name": "&emsp;&emsp;&emsp;&emsp;└菜单管理",
+        "code": "Content_Menu_System",
+        "href": "/system/menu.do",
+        "description": "这是一个内容管理功能",
+        "parent": "基本管理",
+        "level": 0,
+        "status": 1
+      },
+      {
+        "id": 7,
+        "name": "&emsp;&emsp;&emsp;&emsp;└菜单管理",
+        "code": "Content_Menu_System",
+        "href": "/system/menu.do",
+        "description": "这是一个内容管理功能",
+        "parent": "基本管理",
+        "level": 0,
+        "status": 1
+      },
+      {
+        "id": 8,
+        "name": "基本管理",
+        "code": "Content_System",
+        "href": "",
+        "description": "基本管理",
+        "level": 0,
+        "parent": "顶级菜单",
+        "status": 0
+      },
+      {
+        "id": 9,
+        "name": "&emsp;&emsp;└菜单管理",
+        "code": "Content_Menu_System",
+        "href": "/system/menu.do",
+        "description": "这是一个内容管理功能",
+        "parent": "基本管理",
+        "level": 0,
+        "status": 1
+      },
+      {
+        "id": 10,
+        "name": "&emsp;&emsp;&emsp;&emsp;└菜单管理",
+        "code": "Content_Menu_System",
+        "href": "/system/menu.do",
+        "description": "这是一个内容管理功能",
+        "parent": "基本管理",
+        "level": 0,
+        "status": 1
+      },
+      {
+        "id": 11,
+        "name": "&emsp;&emsp;&emsp;&emsp;└菜单管理",
+        "code": "Content_Menu_System",
+        "href": "/system/menu.do",
+        "description": "这是一个内容管理功能",
+        "parent": "基本管理",
+        "level": 0,
+        "status": 1
+      },
+      {
+        "id": 12,
+        "name": "&emsp;&emsp;└菜单管理",
+        "code": "Content_Menu_System",
+        "href": "/system/menu.do",
+        "description": "这是一个内容管理功能",
+        "parent": "基本管理",
+        "level": 0,
+        "status": 1
+      },
+      {
+        "id": 13,
+        "name": "&emsp;&emsp;&emsp;&emsp;└菜单管理",
+        "code": "Content_Menu_System",
+        "href": "/system/menu.do",
+        "description": "这是一个内容管理功能",
+        "parent": "基本管理",
+        "level": 0,
+        "status": 1
+      },
+      {
+        "id": 14,
+        "name": "&emsp;&emsp;&emsp;&emsp;└菜单管理",
+        "code": "Content_Menu_System",
+        "href": "/system/menu.do",
+        "description": "这是一个内容管理功能",
+        "parent": "基本管理",
+        "level": 0,
+        "status": 1
+      }
+    ]
+  }
+}

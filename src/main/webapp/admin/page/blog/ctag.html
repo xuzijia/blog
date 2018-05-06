@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="icon" href="images/face.jpg">
+
+    <link rel="stylesheet" href="/commons/layui/css/layui.css" media="all"/>
+    <script type="text/javascript" src="/commons/layui/layui.js"></script>
+    <link rel="stylesheet" href="/commons/icon/iconfont.css">
+
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/blog.css">
+    <script type="text/javascript" src="../../js/blog/ctag.js"></script>
+
+</head>
+
+<body>
+
+<div class="padding10">
+
+    <div class="layui-col-lg5 layui-col-md12  ">
+        <blockquote class="layui-elem-quote">
+            分类管理
+        </blockquote>
+
+        <div class="btn">
+            <a href="javascript:;" class="layui-btn layui-btn-normal layui-btn-sm add-category">添加分类</a>
+            <a href="javascript:;" class="layui-btn layui-btn-danger layui-btn-sm del-category ">批量删除</a>
+        </div>
+        <table id="category-table" lay-filter="category"></table>
+
+    </div>
+
+    <div class="layui-col-lg1">
+    <!--装饰-->
+    <p>&nbsp;</p>
+    </div>
+
+    <div class="layui-col-lg6 layui-col-md12" >
+        <blockquote class="layui-elem-quote">
+            标签管理
+        </blockquote>
+
+        <div class="btn">
+            <a href="javascript:;" class="layui-btn layui-btn-normal layui-btn-sm add-tag">添加标签</a>
+            <a href="javascript:;" class="layui-btn layui-btn-danger layui-btn-sm del-tag ">批量删除</a>
+        </div>
+        <table id="tag-table" lay-filter="tag"></table>
+    </div>
+
+</div>
+</body>
+<script type="text/html" id="tag-count">
+    <span class="layui-badge-dot" style="margin-right: 10px;"></span>{{ d.count}}
+</script>
+<script type="text/html" id="category-count">
+    <span class="layui-badge-dot layui-bg-blue" style="margin-right: 10px;"></span>{{ d.count}}
+</script>
+<script type="text/html" id="tag-name">
+    <div class="tag-bg">
+        <img src="/admin/images/tag.png" alt="" height="25px" style="margin-right: 15px">
+        <span>{{ d.name}}</span>
+    </div>
+
+</script>
+<script type="text/html" id="cat">
+    {{# var categoryId=d.categoryId }}
+    {{# if(categoryId==0){ }}
+    <span>独立标签</span>
+    {{# } }}
+
+</script>
+<div class="show-add-tag" style="display: none;padding: 10px">
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <label class="layui-form-label" style="text-align: left">
+                    所属分类
+                </label>
+                <div class="layui-input-block">
+                    <select name="categoryId">
+                        <option value="0">独立标签</option>
+                        <option value="2">JAVA开发</option>
+                        <option value="3">前端开发</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label " style="text-align: left">
+                    标签名称
+                </label>
+                <div class="layui-input-block">
+                    <input type="text" class="layui-input" name="name">
+                </div>
+            </div>
+
+        <div class="layui-form-item float-right">
+            <div class="layui-input-block">
+                <a class="layui-btn layui-btn-normal layui-btn-sm " lay-submit lay-filter="add">添加</a>
+                <a class="layui-btn layui-btn-primary close-btn layui-btn-sm" >关闭</a>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+
+</html>

@@ -1,0 +1,241 @@
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+:after,:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+
+
+
+/* 设置整个滚动条的一些属性，宽度针对垂直滚动条，高度针对水平滚动条 */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+/* 整个滚动条去除button剩下的部分 */
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #d8dce5
+}
+/* 滚动条可拖拽的部分 */
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #adadad;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #929292;
+}
+::-webkit-scrollbar-thumb:active {
+    background-color: #666363;
+}
+::-webkit-scrollbar-corner {
+    background-color: #535353
+}
+
+/* 通用样式 */
+.mt-xs {
+    margin-top: 4px
+}
+
+.mt-sm {
+    margin-top: 8px
+}
+
+.mt-md {
+    margin-top: 16px
+}
+
+.mt-lg {
+    margin-top: 24px
+}
+
+.mt-xlg {
+    margin-top: 32px
+}
+
+.mb-xs {
+    margin-bottom: 4px
+}
+
+.mb-sm {
+    margin-bottom: 8px
+}
+
+.mb-md {
+    margin-bottom: 16px
+}
+
+.mb-lg {
+    margin-bottom: 24px
+}
+
+.mb-xlg {
+    margin-bottom: 32px
+}
+
+.ml-xs {
+    margin-left: 4px
+}
+
+.ml-sm {
+    margin-left: 8px
+}
+
+.ml-md {
+    margin-left: 16px
+}
+
+.ml-lg {
+    margin-left: 24px
+}
+
+.ml-xlg {
+    margin-left: 32px
+}
+
+.mr-xs {
+    margin-right: 4px
+}
+
+.mr-sm {
+    margin-right: 8px
+}
+
+.mr-md {
+    margin-right: 16px
+}
+
+.mr-lg {
+    margin-right: 24px
+}
+
+.mr-xlg {
+    margin-right: 32px
+}
+
+.m-xs {
+    margin: 4px
+}
+
+.m-sm {
+    margin: 8px
+}
+
+.m-md {
+    margin: 16px
+}
+
+.m-lg {
+    margin: 24px
+}
+
+.m-xlg {
+    margin: 32px
+}
+
+.pt-xs {
+    padding-top: 4px
+}
+
+.pt-sm {
+    padding-top: 8px
+}
+
+.pt-md {
+    padding-top: 16px
+}
+
+.pt-lg {
+    padding-top: 24px
+}
+
+.pt-xlg {
+    padding-top: 32px
+}
+
+.pb-xs {
+    padding-bottom: 4px
+}
+
+.pb-sm {
+    padding-bottom: 8px
+}
+
+.pb-md {
+    padding-bottom: 16px
+}
+
+.pb-lg {
+    padding-bottom: 24px
+}
+
+.pb-xlg {
+    padding-bottom: 32px
+}
+
+.pl-xs {
+    padding-left: 4px
+}
+
+.pl-sm {
+    padding-left: 8px
+}
+
+.pl-md {
+    padding-left: 16px
+}
+
+.pl-lg {
+    padding-left: 24px
+}
+
+.pl-xlg {
+    padding-left: 32px
+}
+
+.pr-xs {
+    padding-right: 4px
+}
+
+.pr-sm {
+    padding-right: 8px
+}
+
+.pr-md {
+    padding-right: 16px
+}
+
+.pr-lg {
+    padding-right: 24px
+}
+
+.pr-xlg {
+    padding-right: 32px
+}
+
+.p-xs {
+    padding: 4px
+}
+
+.p-sm {
+    padding: 8px
+}
+
+.p-md {
+    padding: 16px
+}
+
+.p-lg {
+    padding: 24px
+}
+
+.p-xlg {
+    padding: 32px
+}

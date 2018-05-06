@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuzijia.blog.mapper.BlogUserMapper">
+    <insert id="addUser" parameterType="blogUser">
+        insert into tb_blog_user(access_token,open_id,user_type,avatar,gender,email,nickname,expired_time,create_time,address,year)
+        values(#{accessToken},#{openId},#{userType},#{avatar},#{gender},#{email},#{nickname},#{expiredTime},#{createTime},#{address},#{year})
+    </insert>
+
+    <select id="findUserByOpenid" parameterType="string" resultType="blogUser">
+        select * from tb_blog_user where open_id=#{openid}
+    </select>
+
+    <update id="updateUser" parameterType="blogUser">
+        update tb_blog_user set access_token=#{accessToken},open_id=#{openId},user_type=#{userType},avatar=#{avatar},gender=#{gender},email=#{email},nickname=#{nickname},expired_time=#{expiredTime},create_time=#{createTime},address=#{address},year=#{year}
+        where id=#{id}
+    </update>
+</mapper>

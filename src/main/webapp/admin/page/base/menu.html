@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>系统菜单管理</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="/commons/layui/css/layui.css" media="all"/>
+    <script type="text/javascript" src="/commons/layui/layui.js"></script>
+    <link rel="stylesheet" href="/commons/icon/iconfont.css">
+    <link rel="stylesheet" href="../../css/common.css">
+    <script type="text/javascript" src="/commons/js/common.js"></script>
+    <script type="text/javascript" src="../../js/base/menu.js"></script>
+</head>
+<body>
+<div class="padding10">
+    <blockquote class="layui-elem-quote">
+        系统菜单管理
+    </blockquote>
+    <div class="table" id="menu-table">
+        <button class="layui-btn layui-btn-normal" id="add-menu"><i class="iconfont icon-27CIRCLE"></i> 添加菜单</button>
+        <button class="layui-btn layui-btn-danger" id="batchdel-menu"><i class="iconfont icon-del"></i> 批量删除</button>
+        <table>
+            <table class="layui-hide" id="table-menu" lay-filter="table-menu">
+            </table>
+        </table>
+
+        <!--表单元素-->
+        <script type="text/html" id="switch-status">
+            <input type="checkbox" name="status" mid={{d.id }} value="{{d.status}}" lay-skin="switch" lay-text="启用|禁用"
+                   lay-filter="status" {{ d.status== 1 ? 'checked' : '' }}>
+        </script>
+        <script type="text/html" id="menu-btn">
+            <a href="javascript:;" class="layui-btn layui-btn-xs layui-btn-normal updatebtn" lay-event="edit" ><i
+                    class="iconfont icon-edit" ></i> 修改</a>
+            <a href="javascript:;" class="layui-btn layui-btn-xs layui-btn-danger delbtn" lay-event="del"><i
+                    class="iconfont icon-del"></i> 删除</a>
+        </script>
+    </div>
+
+</div>
+
+</body>
+<fieldset class="layui-elem-field margin20 marginb10" style="font-size: 16px;display: none" id="show-addmenu">
+    <legend><a name="input">添加菜单</a></legend>
+
+    <div class="layui-field-box">
+
+        <form action="" class="layui-form layui-form-pane" style="margin-left: 30px" id="addMenu">
+
+
+            <div class="layui-form-item">
+                <label for="" class="layui-form-label">上级菜单</label>
+                <div class="layui-input-block">
+                    <select name="parent" lay-verify="required" lay-search id="addmenu-select">
+                        <option value="0">顶级菜单</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="layui-form-item">
+                <label class="layui-form-label">
+                    菜单名称
+                </label>
+                <div class="layui-input-block">
+                    <input type="text" name="name" class="layui-input" lay-verify="required">
+                </div>
+            </div>
+            <div class="layui-form-item" >
+                <label class="layui-form-label">
+                    菜单编码
+                </label>
+                <div class="layui-input-block">
+                    <input type="text" name="code" class="layui-input" lay-verify="required">
+                </div>
+            </div>
+            <div class="layui-form-item" >
+                <label class="layui-form-label">
+                    菜单地址
+                </label>
+                <div class="layui-input-block">
+                    <input type="text" name="href" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item" pane>
+                <label class="layui-form-label">
+                    菜单状态
+                </label>
+                <div class="layui-input-block">
+                    <input type="checkbox" name="flag" lay-skin="switch" style="width: 100px;height: 20px" checked
+                           lay-text="启用|禁用" lay-filter="switchTest" value="1">
+                </div>
+            </div>
+
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">菜单描述</label>
+                <div class="layui-input-block">
+                    <textarea placeholder="请输入内容" class="layui-textarea" name="description"></textarea>
+                </div>
+            </div>
+
+
+
+            <div class="layui-form-item">
+                <div class="layui-input-block float-right">
+                    <a class="layui-btn layui-btn-normal" lay-submit lay-filter="add">保存</a>
+                    <a class="layui-btn layui-btn-primary close-btn" >关闭</a>
+                </div>
+            </div>
+
+
+        </form>
+
+    </div>
+</fieldset>
+<fieldset class="layui-elem-field margin20 marginb10" style="font-size: 16px;display: none" id="show-updatemenu">
+    <legend><a name="input">修改菜单</a></legend>
+
+    <div class="layui-field-box">
+
+        <form action="" class="layui-form layui-form-pane" style="margin-left: 30px" id="updateMenu">
+
+
+            <div class="layui-form-item">
+                <label for="" class="layui-form-label">上级菜单</label>
+                <div class="layui-input-block">
+                    <select name="parent" lay-verify="required" lay-search id="updatemenu-select">
+                        <option value="0">顶级菜单</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="layui-form-item">
+                <label class="layui-form-label">
+                    菜单名称
+                </label>
+                <div class="layui-input-block">
+                    <input type="text" name="name" class="layui-input" lay-verify="required">
+                </div>
+            </div>
+            <div class="layui-form-item" >
+                <label class="layui-form-label">
+                    菜单编码
+                </label>
+                <div class="layui-input-block">
+                    <input type="text" name="code" class="layui-input" lay-verify="required">
+                </div>
+            </div>
+            <div class="layui-form-item" >
+                <label class="layui-form-label">
+                    菜单地址
+                </label>
+                <div class="layui-input-block">
+                    <input type="text" name="href" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item" pane>
+                <label class="layui-form-label">
+                    菜单状态
+                </label>
+                <div class="layui-input-block">
+                    <input type="checkbox" name="status" lay-skin="switch" style="width: 100px;height: 20px" checked
+                           lay-text="启用|禁用" lay-filter="switchTest" value="1">
+                </div>
+            </div>
+
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">菜单描述</label>
+                <div class="layui-input-block">
+                    <textarea placeholder="请输入内容" class="layui-textarea" name="description"></textarea>
+                </div>
+            </div>
+
+
+
+            <div class="layui-form-item">
+                <div class="layui-input-block float-right">
+                    <a class="layui-btn layui-btn-normal " lay-submit lay-filter="update">修改</a>
+                    <a class="layui-btn layui-btn-primary close-btn" >关闭</a>
+                </div>
+            </div>
+
+            <!--id隐藏域-->
+            <input type="hidden" name="id">
+        </form>
+
+    </div>
+</fieldset>
+</html>

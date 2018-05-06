@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/mvc
+            http://www.springframework.org/schema/mvc/spring-mvc.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context.xsd"
+       default-lazy-init="true">
+
+    <!--配置静态资源-->
+    <mvc:default-servlet-handler/>
+    <!--<mvc:resources mapping="/blog/**" location="/blog/" />-->
+
+    <!-- 默认扫描的包路径 -->
+    <context:component-scan base-package="com.xuzijia" />
+
+    <!-- 添加注解驱动 -->
+    <mvc:annotation-driven content-negotiation-manager="contentNegotiationManager">
+        <!--配置json转换器 可以不配置！-->
+        <mvc:message-converters register-defaults="true">
+        <!-- 避免IE执行AJAX时,返回JSON出现下载文件 -->
+        <bean id="fastJsonHttpMessageConverter" class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
+            <property name="supportedMediaTypes">
+                <list>
+                    <value>application/json;charset=UTF-8</value>
+                </list>
+            </property>
+        </bean>
+    </mvc:message-converters>
+
+</mvc:annotation-driven>
+
+
+    <!--解决responsebody 返回json的时候返回406-->
+    <bean id="contentNegotiationManager" class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
+        <property name="favorPathExtension" value="false" />
+        <property name="favorParameter" value="false" />
+        <property name="ignoreAcceptHeader" value="false" />
+        <property name="mediaTypes" >
+            <value>
+                atom=application/atom+xml
+                html=text/html
+                json=application/json
+                *=*/*
+            </value>
+        </property>
+    </bean>
+
+
+    <!--配置上传文件参数-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="maxUploadSize" value="102400000000"/>
+    </bean>
+
+    <!--springmvc默认视图解析器-->
+    <!--<bean class="org.springframework.web.servlet.view.UrlBasedViewResolver">-->
+        <!--<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"></property>-->
+        <!--&lt;!&ndash; 配置jsp路径前缀 &ndash;&gt;-->
+        <!--<property name="prefix" value="/"></property>-->
+        <!--&lt;!&ndash; 配置URl后缀 &ndash;&gt;-->
+        <!--<property name="suffix" value=""></property>-->
+    <!--</bean>-->
+
+    <!--freemarker配置文件-->
+    <bean id="freemarkerConfiguration" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="location" value="classpath:freemarker.properties" />
+    </bean>
+    <!--配置freemarker模版位置-->
+    <bean class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer" id="freeMarkerConfigurer">
+        <!--引入freemarker配置文件-->
+        <property name="freemarkerSettings" ref="freemarkerConfiguration"/>
+        <property name="templateLoaderPath">
+            <value>/WEB-INF/page/</value>
+        </property>
+    </bean>
+
+    <!--配置freemarker视图解析器-->
+    <bean class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+        <property name="suffix" value=".ftl"/>
+        <property name="contentType" value="text/html;charset=UTF-8"/>
+        <property name="requestContextAttribute" value="rc"/>
+        <!--多视图优先freemarker 找不到则会寻找其他解析器-->
+        <property name="order" value="0"/>
+    </bean>
+
+    <!--配置拦截器-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <bean class="com.xuzijia.common.OrginInterceptor"/>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/admin/**"/>
+            <mvc:exclude-mapping path="/admin/login.html"/>
+            <mvc:exclude-mapping path="/admin/login.do"/>
+            <mvc:exclude-mapping path="/admin/logout.do"/>
+            <bean class="com.xuzijia.admin.base.interceptor.LoginInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
+</beans>

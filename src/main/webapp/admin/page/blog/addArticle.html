@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="icon" href="images/face.jpg">
+
+
+    <link rel="stylesheet" href="/commons/layui/css/layui.css" media="all"/>
+    <script type="text/javascript" src="/commons/layui/layui.js"></script>
+    <link rel="stylesheet" href="/commons/icon/iconfont.css">
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/blog.css">
+
+</head>
+<body>
+<div class="padding10">
+    <blockquote class="layui-elem-quote title">
+        添加文章
+    </blockquote>
+    <form action="" class="layui-form">
+        <div class="layui-col-lg9 layui-col-md12">
+            <div class="layui-form-item">
+                <label class="layui-form-label">文章标题*</label>
+                <div class="layui-input-block">
+                    <!--隐藏域 用于修改时保存主键-->
+                    <input type="hidden" name="id">
+                    <input type="text" name="title" placeholder="请输入文章标题" autocomplete="off" class="layui-input" lay-verify="required">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">文章分类*</label>
+                <div class="layui-input-block article-category"  style="width: 40%">
+                    <select name="categoryId" lay-filter="category" lay-verify="required" id="category">
+                        <option value="">请选择文章分类</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">文章封面</label>
+                <div class="layui-input-block">
+                    <div class="thumb layui-inline" style="cursor: pointer" id="thumb-upload">
+                        <i class="iconfont icon-upload"></i>
+                        <p>点击上传文章封面或者直接拖拽到该区域</p>
+                    </div>
+                    <!--动态添加-->
+                    <div class="layui-inline show-thumb-p">
+
+                    </div>
+                    <input type="hidden" value="" name="thumbPic" class="thumbPic">
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label class="layui-form-label">文章摘要</label>
+                <div class="layui-input-block">
+                    <textarea name="summary" placeholder="请输入文章摘要,如果不填默认摘取内容开头部分~" class="layui-textarea"></textarea>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">内容*</label>
+                <div class="layui-input-block">
+                    <!--显示一个富文本-->
+                    <textarea type="text/plain" id="myEditor" style="width:100%;height: 280px"  name="content"></textarea>
+
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-lg3 layui-col-md12">
+            <div class="margin-left-20" >
+                <!--侧边栏-->
+                <blockquote class="layui-elem-quote layui-elem-quote-custom">
+                    添加标签
+                </blockquote>
+                <div class="label">
+
+                </div>
+
+            </div>
+
+            <div class="margin-left-20 margin-top-20" >
+                <!--侧边栏-->
+                <blockquote class="layui-elem-quote layui-elem-quote-custom">
+                    发布
+                </blockquote>
+                <div class="publish">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label layui-form-label-custom">
+                            <i class="iconfont icon-lock icon-p"></i>
+                            公开度
+                        </label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="isPublic" value="1" title="公开浏览" checked>
+                            <input type="radio" name="isPublic" value="0" title="私密浏览" >
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label layui-form-label-custom">
+                            <i class="iconfont icon-chenggong icon-p"></i>
+                            置顶
+                        </label>
+                        <div class="layui-input-block">
+                            <input type="checkbox" lay-skin="switch" name="isTop" lay-text="是|否" value="1">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label layui-form-label-custom">
+                            <i class="iconfont icon-chenggong icon-p"></i>
+                            文章来源
+                        </label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="isOriginal" value="0" title="转载" checked>
+                            <input type="radio" name="isOriginal" value="1" title="原创" >
+                        </div>
+                    </div>
+                    <div class="layui-form-item a-source">
+                        <label class="layui-form-label layui-form-label-custom">
+                            <i class="iconfont icon-chenggong icon-p"></i>
+                            来源地址
+                        </label>
+                        <div class="layui-input-block">
+                            <input type="text" name="sourceUrl" placeholder="转载时该项必填*" autocomplete="off" class="layui-input" style="width: 90%">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label layui-form-label-custom">
+                            <i class="iconfont icon-chenggong icon-p"></i>
+                            状态
+                        </label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="status" value="0" title="保存草稿" checked>
+                            <input type="radio" name="status" value="1" title="马上发布" >
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label layui-form-label-custom">
+                            <i class="iconfont icon-chenggong icon-p"></i>
+                            评论
+                        </label>
+                        <div class="layui-input-block">
+                            <input type="checkbox" lay-skin="switch" name="isComment" lay-text="开启|关闭" value="1" checked="true">
+                        </div>
+                    </div>
+
+                    <hr>
+                    <div class="publish-btn">
+                        <a href="javascript:;" class="layui-btn layui-btn-normal layui-btn-sm" lay-submit lay-filter="add">发布</a>
+                        <!--<a href="javascript:;" class="layui-btn layui-btn-sm layui-btn-primary"  lay-submit lay-filter="look">预览</a>-->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</div>
+</body>
+<!--ueditor-->
+<script type="text/javascript" charset="utf-8" src="/commons/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="/commons/ueditor/ueditor.all.min.js"> </script>
+<script type="text/javascript" charset="utf-8" src="/commons/ueditor/upload.js"></script>
+<!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
+<!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
+<script type="text/javascript" charset="utf-8" src="/commons/ueditor/lang/zh-cn/zh-cn.js"></script>
+<script src="/commons/js/common.js"></script>
+<script type="text/javascript" src="../../js/blog/add_article.js"></script>
+
+
+</html>

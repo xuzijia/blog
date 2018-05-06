@@ -1,0 +1,66 @@
+/**
+    扩展layui原有的样式 打造自己的UI
+ */
+/*按钮*/
+.layui-extends-btn{
+    background-color:#5FB878;
+}
+/*header*/
+.layui-layout-admin .layui-extends-header{
+    background-color: #0099CB;
+    border-bottom: 5px solid #5FB878;
+}
+/*左侧导航条鼠标经过左边框颜色*/
+.layui-nav-tree .layui-nav-bar {
+    background-color: #0099CB;
+}
+.top_tab li{
+    border-left: 1px solid #eee;
+}
+/*主界面间距*/
+.padding10{
+    padding:10px;
+}
+.margin20{
+    margin: 20px;
+}
+.marginb10{
+    margin-bottom: 10px;
+}
+.layui-elem-quote{
+    border-left: 5px solid #0099CB;
+    font-size: 18px;
+}
+.float-right{
+   float: right;
+}
+.float-left{
+   float: left;
+}
+.layui-input-radius{
+    border-radius: 20px;
+}
+.app-color{
+    color: #0099CB;
+}
+.icon{
+    padding-top: 10px;
+}
+.icon a{
+    margin: 0 10px;
+    margin-right: 0px;
+}
+.icon i:before{
+    font-size: 22px;
+    /*padding:15px;*/
+    cursor: pointer;
+}
+.clear-float{
+    clear:both;
+}
+.margin-left-20{
+    margin-left: 20px;
+}
+.margin-top-20{
+    margin-top: 20px;
+}

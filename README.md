@@ -49,41 +49,41 @@
 
 > *1.博客系统主页效果图*
 
-![博客系统主页效果图](http://www.91cloud.top/resource/effect/1.png)
+![博客系统主页效果图](https://raw.githubusercontent.com/xuzijia/blog/master/effect/1.png)
 
 > *2.博客文章详情效果图*
 
-![博客文章详情效果图][2]
+![博客文章详情效果图](https://raw.githubusercontent.com/xuzijia/blog/master/effect/1.png)
 
 > *3.文章评论楼层效果图*
 
-![文章评论楼层效果图][3]
+![文章评论楼层效果图](https://raw.githubusercontent.com/xuzijia/blog/master/effect/1.png)
 
 > *4.后台管理系统文章管理*
 
-![后台管理系统文章管理][4]
-![后台管理系统文章管理][5]
+![后台管理系统文章管理](https://raw.githubusercontent.com/xuzijia/blog/master/effect/1.png)
+![后台管理系统文章管理](https://raw.githubusercontent.com/xuzijia/blog/master/effect/1.png)
 
 > *5.后台管理系统分类标签管理*
 
-![后台管理系统分类标签管理][6]
+![后台管理系统分类标签管理](https://raw.githubusercontent.com/xuzijia/blog/master/effect/1.png)
 
 > *6.后台管理系统评论管理*
 
-![后台管理系统评论管理][7]
-![后台管理系统评论管理][8]
+![后台管理系统评论管理](https://raw.githubusercontent.com/xuzijia/blog/master/effect/1.png)
+![后台管理系统评论管理](https://raw.githubusercontent.com/xuzijia/blog/master/effect/1.png)
 
 > *7.后台管理系统登陆页面*
-![后台管理系统登陆页面][9]
+![后台管理系统登陆页面](https://raw.githubusercontent.com/xuzijia/blog/master/effect/1.png)
 
 > *8.后台管理系统菜单管理（**功能暂未开发~**）*
 
-![后台管理系统菜单管理][10]
+![后台管理系统菜单管理](https://raw.githubusercontent.com/xuzijia/blog/master/effect/1.png)
 
 > *9.后台管理系统网盘管理（**功能暂未开发~**）*
 
-![后台管理系统网盘管理][11]
-![后台管理系统网盘管理][12]
+![后台管理系统网盘管理](https://raw.githubusercontent.com/xuzijia/blog/master/effect/1.png)
+![后台管理系统网盘管理](https://raw.githubusercontent.com/xuzijia/blog/master/effect/1.png)
 
 ------
 

@@ -53,37 +53,37 @@
 
 > *2.博客文章详情效果图*
 
-![博客文章详情效果图](https://raw.githubusercontent.com/xuzijia/blog/master/effect/1.png)
+![博客文章详情效果图](https://raw.githubusercontent.com/xuzijia/blog/master/effect/2.png)
 
 > *3.文章评论楼层效果图*
 
-![文章评论楼层效果图](https://raw.githubusercontent.com/xuzijia/blog/master/effect/1.png)
+![文章评论楼层效果图](https://raw.githubusercontent.com/xuzijia/blog/master/effect/4.png)
 
 > *4.后台管理系统文章管理*
 
-![后台管理系统文章管理](https://raw.githubusercontent.com/xuzijia/blog/master/effect/1.png)
-![后台管理系统文章管理](https://raw.githubusercontent.com/xuzijia/blog/master/effect/1.png)
+![后台管理系统文章管理](https://raw.githubusercontent.com/xuzijia/blog/master/effect/16.png)
+![后台管理系统文章管理](https://raw.githubusercontent.com/xuzijia/blog/master/effect/17.png)
 
 > *5.后台管理系统分类标签管理*
 
-![后台管理系统分类标签管理](https://raw.githubusercontent.com/xuzijia/blog/master/effect/1.png)
+![后台管理系统分类标签管理](https://raw.githubusercontent.com/xuzijia/blog/master/effect/18.png)
 
 > *6.后台管理系统评论管理*
 
-![后台管理系统评论管理](https://raw.githubusercontent.com/xuzijia/blog/master/effect/1.png)
-![后台管理系统评论管理](https://raw.githubusercontent.com/xuzijia/blog/master/effect/1.png)
+![后台管理系统评论管理](https://raw.githubusercontent.com/xuzijia/blog/master/effect/19.png)
+![后台管理系统评论管理](https://raw.githubusercontent.com/xuzijia/blog/master/effect/20.png)
 
 > *7.后台管理系统登陆页面*
-![后台管理系统登陆页面](https://raw.githubusercontent.com/xuzijia/blog/master/effect/1.png)
+![后台管理系统登陆页面](https://raw.githubusercontent.com/xuzijia/blog/master/effect/21.png)
 
 > *8.后台管理系统菜单管理（**功能暂未开发~**）*
 
-![后台管理系统菜单管理](https://raw.githubusercontent.com/xuzijia/blog/master/effect/1.png)
+![后台管理系统菜单管理](https://raw.githubusercontent.com/xuzijia/blog/master/effect/11.png)
 
 > *9.后台管理系统网盘管理（**功能暂未开发~**）*
 
-![后台管理系统网盘管理](https://raw.githubusercontent.com/xuzijia/blog/master/effect/1.png)
-![后台管理系统网盘管理](https://raw.githubusercontent.com/xuzijia/blog/master/effect/1.png)
+![后台管理系统网盘管理](https://raw.githubusercontent.com/xuzijia/blog/master/effect/13.png)
+![后台管理系统网盘管理](https://raw.githubusercontent.com/xuzijia/blog/master/effect/14.png)
 
 ------
 

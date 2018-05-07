@@ -76,11 +76,11 @@
 > *7.后台管理系统登陆页面*
 ![后台管理系统登陆页面](https://raw.githubusercontent.com/xuzijia/blog/master/effect/21.png)
 
-> *8.后台管理系统菜单管理（**功能暂未开发~**）*
+> *8. 后台管理系统菜单管理（**功能暂未开发~**）*
 
 ![后台管理系统菜单管理](https://raw.githubusercontent.com/xuzijia/blog/master/effect/11.png)
 
-> *9.后台管理系统网盘管理（**功能暂未开发~**）*
+> *9. 后台管理系统网盘管理（**功能暂未开发~**）*
 
 ![后台管理系统网盘管理](https://raw.githubusercontent.com/xuzijia/blog/master/effect/13.png)
 ![后台管理系统网盘管理](https://raw.githubusercontent.com/xuzijia/blog/master/effect/14.png)

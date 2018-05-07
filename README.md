@@ -49,7 +49,7 @@
 
 > *1.博客系统主页效果图*
 
-![博客系统主页效果图][1]
+![博客系统主页效果图](http://www.91cloud.top/resource/effect/1.png)
 
 > *2.博客文章详情效果图*
 
@@ -87,21 +87,9 @@
 
 ------
 
+
 > **再一次感谢您花费时间阅读这份文档，star一下吧 嘿嘿~~~**
 
 作者： **xuzijia**    
 最后一次修改时间：*2018 年 05月 07日*    
 
-
-  [1]: http://www.91cloud.top/resource/effect/1.png
-  [2]: http://www.91cloud.top/resource/effect/2.png
-  [3]: http://www.91cloud.top/resource/effect/4.png
-  [4]: http://www.91cloud.top/resource/effect/16.png
-  [5]: http://www.91cloud.top/resource/effect/17.png
-  [6]: http://www.91cloud.top/resource/effect/18.png
-  [7]: http://www.91cloud.top/resource/effect/19.png
-  [8]: http://www.91cloud.top/resource/effect/20.png
-  [9]: http://www.91cloud.top/resource/effect/21.png
-  [10]: http://www.91cloud.top/resource/effect/11.png
-  [11]: http://www.91cloud.top/resource/effect/13.png
-  [12]: http://www.91cloud.top/resource/effect/14.png

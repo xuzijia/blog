@@ -1,15 +1,7 @@
-# 个人博客系统
+# 个人博客cms系统V1.0
 
 ------
 
-## 项目预览地址
-博客系统：[http://www.91cloud.top](http://www.91cloud.top)
-
-前台页面由: [https://github.com/miyakowork/NoteBlog](https://github.com/miyakowork/NoteBlog)提供
-
-后台管理系统：[http://www.91cloud.top/admin](http://www.91cloud.top/admin) 
-
-默认账号：xuzijia 默认密码：xuzijia
 
 ## 项目主要内容
 

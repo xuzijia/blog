@@ -69,9 +69,9 @@ public class CommentAdminController {
     @RequestMapping("replyComment.do")
     @ResponseBody
     public ResultData replyComment(CommentVo comment,String email,String username,String sourceContent) {
-        //回复人固定死 user_id:1
+        String finalContent = ResultUtil.stripXSS(sourceContent);
         try {
-            commentService.replyComment(comment,email,username,sourceContent);
+            commentService.replyComment(comment,email,username,finalContent);
         } catch (Exception e) {
             return new ResultUtil().createErrorResult(e.getMessage());
         }

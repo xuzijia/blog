@@ -14,7 +14,7 @@
         <mybatis.verison>3.4.0</mybatis.verison>
         <junit.verison>3.8.1</junit.verison>
         <mybatis-spring.version>1.3.0</mybatis-spring.version>
-        <mysql.version>5.1.44</mysql.version>
+        <mysql.version>8.0.16</mysql.version>
         <dbcp.version>1.4</dbcp.version>
         <log4j.version>1.2.17</log4j.version>
         <lombok.version>1.16.18</lombok.version>

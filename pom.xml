@@ -214,7 +214,7 @@
         <dependency>
             <groupId>com.itextpdf</groupId>
             <artifactId>itextpdf</artifactId>
-            <version>5.4.3</version>
+            <version>5.5.12</version>
         </dependency>
         <!--itext插件-->
 
